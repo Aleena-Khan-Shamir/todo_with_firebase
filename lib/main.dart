@@ -8,12 +8,13 @@ import 'package:timezone/data/latest.dart' as tz;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Get.put(NotificationServices());
-  tz.initializeTimeZones();
-  runApp(const MyApp());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Get.put(NotificationServices());
+  tz.initializeTimeZones();
+  runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {
